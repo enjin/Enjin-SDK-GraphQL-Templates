@@ -17,4 +17,4 @@ query {
 $id: Int
 $name: String
 $email: String
-$pagination: PaginationInput! = { page: 1, limit: 100 }
+$pagination: PaginationInput = { page: 1, limit: 100 }

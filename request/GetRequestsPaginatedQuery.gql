@@ -36,4 +36,4 @@ $txState: TransactionState
 $txStateIn: [TransactionState]
 $sort: TransactionSortInput
 $broadcastOnly: Boolean
-$pagination: PaginationInput! = { page: 1, limit: 100 }
+$pagination: PaginationInput = { page: 1, limit: 100 }
