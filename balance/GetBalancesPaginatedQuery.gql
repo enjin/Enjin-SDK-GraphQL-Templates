@@ -26,4 +26,4 @@ $valGt: Int
 $valGte: Int
 $valLt: Int
 $valLte: Int
-$pagination: PaginationInput!
+$pagination: PaginationInput! = { page: 1, limit: 100 }

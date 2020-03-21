@@ -15,4 +15,4 @@ query {
 
 $id: Int
 $name: String
-$pagination: PaginationInput!
+$pagination: PaginationInput! = { page: 1, limit: 100 }
