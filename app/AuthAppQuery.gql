@@ -1,0 +1,9 @@
+query {
+    result: AuthApp(id: $id, secret: $secret) {
+        accessToken
+        refreshToken
+    }
+}
+
+$id: Int!
+$secret: String!
