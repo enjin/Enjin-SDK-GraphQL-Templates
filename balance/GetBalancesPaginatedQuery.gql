@@ -21,6 +21,7 @@ query {
 
 $appIds: [Int]
 $ethAddress: String
+$tokenId: String
 $value: Int
 $valGt: Int
 $valGte: Int
