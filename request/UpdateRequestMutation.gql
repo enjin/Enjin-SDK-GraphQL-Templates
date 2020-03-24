@@ -22,8 +22,6 @@ mutation {
         decrease_max_transfer_fee_data: $decreaseMaxTransferFeeData,
         release_reserve_data: $releaseReserveData,
         add_log_data: $addLogData,
-        batch_approve_data: $batchApproveData,
-        set_approval_data: $setApprovalData,
         set_approval_for_all_data: $setApprovalForAllData,
         message_data: $messageData
     ) {
@@ -53,7 +51,5 @@ $setTransferFeeData: SetTransferFeeInput
 $decreaseMaxTransferFeeData: DecreaseMaxTransferFeeInput
 $releaseReserveData: ReleaseReserveInput
 $addLogData: AddLogInput
-$batchApproveData: BatchApproveInput
-$setApprovalData: SetApprovalInput
 $setApprovalForAllData: SetApprovalForAllInput
 $messageData: MessageInput
