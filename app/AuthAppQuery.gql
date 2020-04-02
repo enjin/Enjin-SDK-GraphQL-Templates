@@ -1,7 +1,7 @@
 query {
     result: AuthApp(id: $id, secret: $secret) {
         accessToken
-        refreshToken
+        expiresIn
     }
 }
 

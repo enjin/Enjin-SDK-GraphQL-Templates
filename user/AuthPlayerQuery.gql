@@ -3,7 +3,7 @@ query {
         id: $id
     ) {
         accessToken
-        refreshToken
+        expiresIn
     }
 }
 
