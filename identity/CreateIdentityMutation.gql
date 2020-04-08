@@ -1,7 +1,7 @@
 mutation {
     result: CreateEnjinIdentity(
         appId: $appId,
-        user_id: $userId,
+        userId: $userId,
         email: $email,
         ethAddress: $ethAddr
     ) {
