@@ -32,7 +32,6 @@ $recipientAddr: String
 $senderOrRecipientId: Int
 $tokenId: String
 $value: String
-$txState: TransactionState
 $txStateIn: [TransactionState]
 $sort: TransactionSortInput
 $broadcastOnly: Boolean
