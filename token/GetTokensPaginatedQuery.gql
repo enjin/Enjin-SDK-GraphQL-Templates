@@ -29,10 +29,10 @@ $id: String
 $appId: Int
 $name: String
 $creator: String
-$totalSupply: String
+$totalSupply: BigInt
 $reserve: String
 $supplyModel: TokenSupplyModel
-$meltValue: String
+$meltValue: BigInt
 $meltFeeRatio: String
 $nonFungible: Boolean
 $firstBlock: Int
