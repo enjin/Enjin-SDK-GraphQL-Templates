@@ -6,13 +6,25 @@ fragment AppFragment on EnjinApp {
     image
     linkingCode @include(if: $withLinkingCode)
     linkingCodeQr(size: $linkingCodeQrSize) @include(if: $withLinkingCodeQr)
-    identity @include(if: $withCurrentUserIdentity) {
-        ...IdentityFragment
-    }
+    tokenCount @include(if: $withTokenCount)
     owner @include(if: $withOwner) {
         id
     }
-    tokenCount @include(if: $withTokenCount)
+    identities @include(if: $withUserIdentities) {
+        ...IdentityFragment
+    }
+    identity @include(if: $withCurrentUserIdentity) {
+        ...IdentityFragment
+    }
+    transactions @include(if: $withTransactions) {
+        ...TransactionFragment
+    }
+    tokens @include(if: $withTokens) {
+        ...TokenFragment
+    }
+    wallets @include(if: $withWallets) {
+        ...WalletFragment
+    }
     createdAt @include(if: $withAppTimestamps)
     updatedAt @include(if: $withAppTimestamps)
 }
@@ -21,7 +33,11 @@ $withSecret: Boolean = false
 $withLinkingCode: Boolean = false
 $withLinkingCodeQr: Boolean = false
 $linkingCodeQrSize: Int
+$withUserIdentities: Boolean = false
 $withCurrentUserIdentity: Boolean = false
 $withOwner: Boolean = false
 $withTokenCount: Boolean = false
+$withTransactions: Boolean = false
+$withTokens: Boolean = false
+$withWallets: Boolean = false
 $withAppTimestamps: Boolean = false

@@ -4,6 +4,12 @@ fragment UserFragment on EnjinUser {
     accessTokens @include(if: $withUserAccessTokens)
     isPlayer
     emailVerified
+    app(id: $appId) @include(if: $withUserApps) {
+        ...AppFragment
+    }
+    apps(id: $appId) @include(if: $withUserApps) {
+        ...AppFragment
+    }
     identities @include(if: $withUserIdentities) {
         ...IdentityFragment
     }
@@ -11,6 +17,7 @@ fragment UserFragment on EnjinUser {
     updatedAt @include(if: $withUserTimestamps)
 }
 
+$appId: Int
 $withUserAccessTokens: Boolean = false
 $withUserIdentities: Boolean = false
 $withUserTimestamps: Boolean = false

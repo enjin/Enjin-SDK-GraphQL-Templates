@@ -1,0 +1,14 @@
+query {
+    result: EnjinWallet(
+        ethAddress: $ethAddr
+    ) {
+        items {
+            ...WalletFragment
+        }
+        cursor {
+            ...PaginationCursorFragment
+        }
+    }
+}
+
+$ethAddr: String

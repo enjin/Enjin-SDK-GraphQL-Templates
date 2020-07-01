@@ -2,7 +2,23 @@ fragment BalanceFragment on EnjinBalance {
     id(format: $balIdFormat)
     index(format: $balIndexFormat)
     value
+    app @include(if: $withApp) {
+        ...AppFragment
+    }
+    token @include(if: $withToken) {
+        ...TokenFragment
+    }
+    identity @include(if: $withIdentity) {
+        ...IdentityFragment
+    }
+    wallet @include(if: $withWallet) {
+        ...WalletFragment
+    }
 }
 
 $balIdFormat: TokenIdFormat
 $balIndexFormat: TokenIndexFormat
+$withApp: Boolean = false
+$withToken: Boolean = false
+$withIdentity: Boolean = false
+$withWallet: Boolean = false

@@ -11,8 +11,10 @@ query {
         meltFeeRatio: $meltFeeRatio,
         nonFungible: $nonFungible,
         firstBlock: $firstBlock,
+        transferable: $transferable,
         blockHeight: $blockHeight,
         markedForDelete: $markedForDelete,
+        filter: $filter,
         sortBy: $sort,
         pagination: $pagination
     ) {
@@ -35,8 +37,10 @@ $supplyModel: TokenSupplyModel
 $meltValue: BigInt
 $meltFeeRatio: String
 $nonFungible: Boolean
+$transferable: TokenTransferable
 $firstBlock: Int
 $blockHeight: Int
 $markedForDelete: Boolean
+$filter: TokenFilter
 $sort: TokenSortInput
 $pagination: PaginationInput = { page: 1, limit: 100 }

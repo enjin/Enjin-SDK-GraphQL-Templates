@@ -1,0 +1,6 @@
+fragment GasPricesFragment on GasPrices {
+    fast
+    fastest
+    safeLow
+    average
+}
