@@ -3,30 +3,30 @@ fragment IdentityFragment on EnjinIdentity {
     appId
     linkingCode @include(if: $withLinkingCode)
     linkingCodeQr(size: $linkingCodeQrSize) @include(if: $withLinkingCodeQr)
-    app @include(if: $withApp) {
+    app @include(if: $withIdentityApp) {
         ...AppFragment
     }
-    user @include(if: $withUser) {
+    user @include(if: $withIdentityUser) {
         ...UserFragment
     }
     transactions(
-        state: $transactionsState,
-        state_in: $transactionsStateIn,
-        can_broadcast_only: $transactionsCanBroadcastOnly,
-        pagination: $transactionsPagination,
-        sort_by: $transactionsSortBy
-    ) @include(if: $withTransactions) {
+        state: $identityTransactionsState,
+        state_in: $identityTransactionsStateIn,
+        can_broadcast_only: $identityTransactionsCanBroadcastOnly,
+        pagination: $identityTransactionsPagination,
+        sort_by: $identityTransactionsSortBy
+    ) @include(if: $withIdentityTransactions) {
         ...TransactionFragment
     }
     tokens(
-        id: $tokensId,
-        index: $tokensIndex,
-        pagination: $tokensPagination,
-        sort_by: $tokensSortBy
-    ) @include(if: $withTokens) {
+        id: $identityTokensId,
+        index: $identityTokensIndex,
+        pagination: $identityTokensPagination,
+        sort_by: $identityTokensSortBy
+    ) @include(if: $withIdentityTokens) {
         ...TokenFragment
     }
-    wallet @include(if: $withWallet) {
+    wallet @include(if: $withIdentityWallet) {
         ...WalletFragment
     }
     createdAt @include(if: $withIdentityTimestamps)
@@ -36,18 +36,18 @@ fragment IdentityFragment on EnjinIdentity {
 $withLinkingCode: Boolean = false
 $withLinkingCodeQr: Boolean = false
 $linkingCodeQrSize: Int
-$withApp: Boolean = false
-$withUser: Boolean = false
-$withTransactions: Boolean = false
-$transactionsState: TransactionState
-$transactionsStateIn: [TransactionState]
-$transactionsCanBroadcastOnly: Boolean
-$transactionsPagination: PaginationInput
-$transactionsSortBy: TransactionSortInput
-$withTokens: Boolean = false
-$tokensId: String
-$tokensIndex: String
-$tokensPagination: PaginationInput
-$tokensSortBy: TokenSortInput
-$withWallet: Boolean = false
+$withIdentityApp: Boolean = false
+$withIdentityUser: Boolean = false
+$withIdentityTransactions: Boolean = false
+$identityTransactionsState: TransactionState
+$identityTransactionsStateIn: [TransactionState]
+$identityTransactionsCanBroadcastOnly: Boolean
+$identityTransactionsPagination: PaginationInput
+$identityTransactionsSortBy: TransactionSortInput
+$withIdentityTokens: Boolean = false
+$identityTokensId: String
+$identityTokensIndex: String
+$identityTokensPagination: PaginationInput
+$identityTokensSortBy: TokenSortInput
+$withIdentityWallet: Boolean = false
 $withIdentityTimestamps: Boolean = false

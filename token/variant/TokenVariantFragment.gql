@@ -1,0 +1,12 @@
+fragment TokenVariantFragment on EnjinTokenVariant {
+    id
+    tokenId
+    variantMetadata @include(if: $withVariantMetadata)
+    usageCount @include(if: $withVariantUsageCount)
+    createdAt @include(if: $withTokenVariantTimestamps)
+    updatedAt @include(if: $withTokenVariantTimestamps)
+}
+
+$withTokenVariantMetadata: Boolean = false
+$withVariantUsageCount: Boolean = false
+$withTokenVariantTimestamps: Boolean = false

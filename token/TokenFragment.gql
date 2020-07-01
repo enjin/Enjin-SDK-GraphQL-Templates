@@ -17,11 +17,32 @@ fragment TokenFragment on EnjinToken {
     supplyModel @include(if: $withSupplyDetails)
     circulatingSupply @include(if: $withSupplyDetails)
     totalSupply @include(if: $withSupplyDetails)
+    balance @include(if: $withSupplyDetails)
     transferFeeSettings @include(if: $withTransferSettings) {
         ...TokenTransferFeeSettingsFragment
     }
     transferable @include(if: $withTransferSettings)
     itemURI(replace_uri_parameters: $replaceUriParams) @include(if: $withItemUri)
+    metadata @include(if: $withTokenMetadata)
+    app @include(if: $withTokenApp) {
+        ...AppFragment
+    }
+    identities @include(if: $withTokenIdentities) {
+        ...IdentityFragment
+    }
+    tokenEvents @include(if: $withTokenEvents) {
+        ...TokenEventFragment
+    }
+    transactions @include(if: $withTokenTransactions) {
+        ...TransactionFragment
+    }
+    wallet @include(if: $withTokenWallet) {
+        ...WalletFragment
+    }
+    variantMode @include(if: $withTokenVariants)
+    variants @include(if: $withTokenVariants) {
+        ...TokenVariantFragment
+    }
     createdAt @include(if: $withTokenTimestamps)
     updatedAt @include(if: $withTokenTimestamps)
 }
@@ -37,4 +58,11 @@ $withDeleteStatus: Boolean = false
 $withSupplyDetails: Boolean = false
 $withTransferSettings: Boolean = false
 $withItemUri: Boolean = false
+$withTokenMetadata: Boolean = false
+$withTokenApp: Boolean = false
+$withTokenIdentities: Boolean = false
+$withTokenEvents: Boolean = false
+$withTokenTransactions: Boolean = false
+$withTokenWallet: Boolean = false
+$withTokenVariants: Boolean = false
 $withTokenTimestamps: Boolean = false

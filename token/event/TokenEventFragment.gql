@@ -10,6 +10,9 @@ fragment TokenEventFragment on EnjinTokenEvent {
     token @include(if: $withEventToken) {
         ...TokenFragment
     }
+    transaction @include(if: $withEventTransaction) {
+        ...TransactionFragment
+    }
     createdAt @include(if: $withTokenEventTimestamps)
     updatedAt @include(if: $withTokenEventTimestamps)
 }
@@ -17,4 +20,5 @@ fragment TokenEventFragment on EnjinTokenEvent {
 $withEventParams: Boolean = true
 $withBlockNumber: Boolean = true
 $withEventToken: Boolean = false
+$withEventTransaction: Boolean = false
 $withTokenEventTimestamps: Boolean = false

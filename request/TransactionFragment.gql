@@ -20,8 +20,23 @@ fragment TransactionFragment on EnjinTransaction {
     state @include(if: $withState)
     accepted @include(if: $withState)
     receipt @include(if: $withReceipt)
+    app @include(if: $withRequestApp) {
+        ...AppFragment
+    }
+    identity @include(if: $withRequestIdentity) {
+        ...IdentityFragment
+    }
+    recipient @include(if: $withRequestRecipient) {
+        ...IdentityFragment
+    }
+    token @include(if: $withRequestToken) {
+        ...TokenFragment
+    }
     events(id: $eventsId, event: $eventsType) @include(if: $withEvents) {
         ...TokenEventFragment
+    }
+    wallet @include(if: $withRequestWallet) {
+
     }
     createdAt @include(if: $withRequestTimestamps)
     updatedAt @include(if: $withRequestTimestamps)
@@ -37,5 +52,10 @@ $withSignedTxs: Boolean = false
 $withNonce: Boolean = false
 $withState: Boolean = false
 $withReceipt: Boolean = false
+$withRequestApp: Boolean = false
+$withRequestIdentity: Boolean = false
+$withRequestRecipient: Boolean = false
+$withRequestToken: Boolean = false
 $withEvents: Boolean = false
+$withRequestWallet: Boolean = false
 $withRequestTimestamps: Boolean = false
