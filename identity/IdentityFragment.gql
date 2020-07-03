@@ -9,23 +9,6 @@ fragment IdentityFragment on EnjinIdentity {
     user @include(if: $withIdentityUser) {
         ...UserFragment
     }
-    transactions(
-        state: $identityTransactionsState,
-        state_in: $identityTransactionsStateIn,
-        can_broadcast_only: $identityTransactionsCanBroadcastOnly,
-        pagination: $identityTransactionsPagination,
-        sort_by: $identityTransactionsSortBy
-    ) @include(if: $withIdentityTransactions) {
-        ...TransactionFragment
-    }
-    tokens(
-        id: $identityTokensId,
-        index: $identityTokensIndex,
-        pagination: $identityTokensPagination,
-        sort_by: $identityTokensSortBy
-    ) @include(if: $withIdentityTokens) {
-        ...TokenFragment
-    }
     wallet @include(if: $withIdentityWallet) {
         ...WalletFragment
     }
@@ -38,16 +21,5 @@ $withLinkingCodeQr: Boolean = false
 $linkingCodeQrSize: Int
 $withIdentityApp: Boolean = false
 $withIdentityUser: Boolean = false
-$withIdentityTransactions: Boolean = false
-$identityTransactionsState: TransactionState
-$identityTransactionsStateIn: [TransactionState]
-$identityTransactionsCanBroadcastOnly: Boolean
-$identityTransactionsPagination: PaginationInput
-$identityTransactionsSortBy: TransactionSortInput
-$withIdentityTokens: Boolean = false
-$identityTokensId: String
-$identityTokensIndex: String
-$identityTokensPagination: PaginationInput
-$identityTokensSortBy: TokenSortInput
 $withIdentityWallet: Boolean = false
 $withIdentityTimestamps: Boolean = false
