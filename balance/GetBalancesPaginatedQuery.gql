@@ -3,6 +3,7 @@ query {
         appIds: $appIds,
         ethAddress: $ethAddress,
         tokenId: $tokenId,
+        filter: $filter,
         value: $value,
         value_gt: $valGt,
         value_gte: $valGte,
@@ -22,6 +23,7 @@ query {
 $appIds: [Int]
 $ethAddress: String
 $tokenId: String
+$filter: BalanceFilter
 $value: Int
 $valGt: Int
 $valGte: Int
