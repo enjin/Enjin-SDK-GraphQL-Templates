@@ -3,7 +3,8 @@ mutation {
         id: $id,
         name: $name,
         description: $description,
-        image: $image
+        image: $image,
+        options: $options
     ) {
         ...AppFragment
     }
@@ -13,3 +14,4 @@ $id: Int
 $name: String
 $description: String
 $image: String
+$options: AppOptionsInput

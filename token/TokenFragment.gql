@@ -22,6 +22,8 @@ fragment TokenFragment on EnjinToken {
     }
     transferable @include(if: $withTransferSettings)
     itemURI(replace_uri_parameters: $replaceUriParams) @include(if: $withItemUri)
+    metadata @include(if: $withTokenMetadata)
+    variantMode @include(if: $withTokenVariantMode)
     createdAt @include(if: $withTokenTimestamps)
     updatedAt @include(if: $withTokenTimestamps)
 }
@@ -37,4 +39,6 @@ $withDeleteStatus: Boolean = false
 $withSupplyDetails: Boolean = false
 $withTransferSettings: Boolean = false
 $withItemUri: Boolean = false
+$withTokenMetadata: Boolean = false
+$withTokenVariantMode: Boolean = false
 $withTokenTimestamps: Boolean = false

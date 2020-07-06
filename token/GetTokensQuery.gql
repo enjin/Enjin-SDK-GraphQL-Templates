@@ -10,9 +10,11 @@ query {
         meltValue: $meltValue,
         meltFeeRatio: $meltFeeRatio,
         nonFungible: $nonFungible,
+        transferable: $transferable,
         firstBlock: $firstBlock,
         blockHeight: $blockHeight,
         markedForDelete: $markedForDelete,
+        filter: $filter,
         sortBy: $sort
     ) {
         ...TokenFragment
@@ -29,7 +31,9 @@ $supplyModel: TokenSupplyModel
 $meltValue: BigInt
 $meltFeeRatio: String
 $nonFungible: Boolean
+$transferable: TokenTransferable
 $firstBlock: Int
 $blockHeight: Int
 $markedForDelete: Boolean
+$filter: TokenFilter
 $sort: TokenSortInput
