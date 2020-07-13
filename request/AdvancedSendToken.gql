@@ -1,0 +1,17 @@
+query {
+    result: AdvancedSendToken(
+        transfers: $transfers,
+        data: $data,
+        wallet: $ethAddress,
+        test: $test,
+        send: $send
+    ) {
+        ...Transaction
+    }
+}
+
+$transfers: [TransferInput]!
+$data: String
+$ethAddress: EthAddress
+$test: Boolean = true
+$send: Boolean = true

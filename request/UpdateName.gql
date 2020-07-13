@@ -1,0 +1,19 @@
+query {
+    result: UpdateName(
+        tokenId: $tokenId,
+        tokenIndex: $tokenIndex,
+        name: $name,
+        wallet: $ethAddress,
+        test: $test,
+        send: $send
+    ) {
+        ...Transaction
+    }
+}
+
+$tokenId: String!
+$tokenIndex: String
+$name: String!
+$ethAddress: EthAddress
+$test: Boolean = true
+$send: Boolean = true

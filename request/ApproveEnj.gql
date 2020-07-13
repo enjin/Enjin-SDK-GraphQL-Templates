@@ -1,0 +1,15 @@
+query {
+    result: ApproveEnj(
+        value: $value,
+        wallet: $ethAddress,
+        test: $test,
+        send: $send
+    ) {
+        ...Transaction
+    }
+}
+
+$value: BigInt!
+$ethAddress: EthAddress
+$test: Boolean = true
+$send: Boolean = true

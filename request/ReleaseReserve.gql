@@ -1,0 +1,17 @@
+query {
+    result: ReleaseReserve(
+        tokenId: $tokenId,
+        value: $value,
+        wallet: $ethAddress,
+        test: $test,
+        send: $send
+    ) {
+        ...Transaction
+    }
+}
+
+$tokenId: String!
+$value: BigInt!
+$ethAddress: EthAddress
+$test: Boolean = true
+$send: Boolean = true

@@ -1,0 +1,19 @@
+query {
+    result: SetMeltFee(
+        tokenId: $tokenId,
+        tokenIndex: $tokenIndex,
+        meltFee: $meltFee,
+        wallet: $ethAddress,
+        test: $test,
+        send: $send
+    ) {
+        ...Transaction
+    }
+}
+
+$tokenId: String!
+$tokenIndex: String
+$meltFee: Int!
+$ethAddress: EthAddress
+$test: Boolean = true
+$send: Boolean = true

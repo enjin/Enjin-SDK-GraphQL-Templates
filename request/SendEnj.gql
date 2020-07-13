@@ -1,0 +1,17 @@
+query {
+    result: SendEnj(
+        to: $recipientAddress,
+        value: $value,
+        wallet: $ethAddress,
+        test: $test,
+        send: $send
+    ) {
+        ...Transaction
+    }
+}
+
+$recipientAddress: EthAddress!
+$value: BigInt!
+$ethAddress: EthAddress
+$test: Boolean = true
+$send: Boolean = true

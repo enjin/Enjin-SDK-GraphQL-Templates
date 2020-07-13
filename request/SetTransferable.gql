@@ -1,0 +1,19 @@
+query {
+    result: SetTransferable(
+        tokenId: $tokenId,
+        tokenIndex: $tokenIndex,
+        transferable: $transferable,
+        wallet: $ethAddress,
+        test: $test,
+        send: $send
+    ) {
+        ...Transaction
+    }
+}
+
+$tokenId: String!
+$tokenIndex: String
+$transferable: TokenTransferable!
+$ethAddress: EthAddress
+$test: Boolean = true
+$send: Boolean = true

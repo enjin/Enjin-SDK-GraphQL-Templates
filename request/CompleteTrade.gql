@@ -1,0 +1,15 @@
+query {
+    result: CompleteTrade(
+        tradeId: $tradeId,
+        wallet: $ethAddress,
+        test: $test,
+        send: $send
+    ) {
+        ...Transaction
+    }
+}
+
+$tradeId: String!
+$ethAddress: EthAddress
+$test: Boolean = true
+$send: Boolean = true

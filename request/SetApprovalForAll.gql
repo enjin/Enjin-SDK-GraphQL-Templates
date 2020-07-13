@@ -1,0 +1,17 @@
+query {
+    result: SetApprovalForAll(
+        operator: $operatorAddress,
+        approved: $approved,
+        wallet: $ethAddress,
+        test: $test,
+        send: $send
+    ) {
+        ...Transaction
+    }
+}
+
+$operator: EthAddress!
+$approved: Boolean!
+$ethAddress: EthAddress
+$test: Boolean = true
+$send: Boolean = true

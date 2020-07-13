@@ -1,0 +1,23 @@
+query {
+    result: SetWhitelisted(
+        tokenId: $tokenId,
+        account: $accountAddress,
+        whitelisted: $whitelisted,
+        whitelistedAddress: $whitelistedAddress,
+        on: $on
+        wallet: $ethAddress,
+        test: $test,
+        send: $send
+    ) {
+        ...Transaction
+    }
+}
+
+$tokenId: String!
+$accountAddress: EthAddress!
+$whitelisted: Whitelisted!
+$whitelistedAddress: EthAddress
+$on: Boolean!
+$ethAddress: EthAddress
+$test: Boolean = true
+$send: Boolean = true

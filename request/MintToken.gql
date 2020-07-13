@@ -1,0 +1,17 @@
+query {
+    result: MintToken(
+        tokenId: $tokenId,
+        mints: $mints,
+        wallet: $ethAddress,
+        test: $test,
+        send: $send
+    ) {
+        ...Transaction
+    }
+}
+
+$tokenId: String!
+$mints: [MintInput]!
+$ethAddress: EthAddress
+$test: Boolean = true
+$send: Boolean = true

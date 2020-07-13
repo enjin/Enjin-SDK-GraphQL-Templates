@@ -1,0 +1,19 @@
+query {
+    result: CreateTrade(
+        askingTokens: $askingTokens,
+        offeringTokens: $offeringTokens,
+        secondParty: $recipientAddress,
+        wallet: $ethAddress,
+        test: $test,
+        send: $send
+    ) {
+        ...Transaction
+    }
+}
+
+$askingTokens: [TradeInput]!
+$offeringTokens: [TradeInput]!
+$recipientAddress: EthAddress!
+$ethAddress: EthAddress
+$test: Boolean = true
+$send: Boolean = true

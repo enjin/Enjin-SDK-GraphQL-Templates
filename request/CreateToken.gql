@@ -1,0 +1,31 @@
+query {
+    result: CreateToken(
+        name: $name,
+        totalSupply: $totalSupply,
+        initialReserve: $initialReserve,
+        supplyModel: $supplyModel,
+        meltValue: $meltValue,
+        meltFeeRatio: $meltFeeRatio,
+        transferable: $transferable,
+        transferFeeSettings: $transferFeeSettings,
+        nonFungible: $nonFungible,
+        wallet: $ethAddress,
+        test: $test,
+        send: $send
+    ) {
+        ...Transaction
+    }
+}
+
+$name: String!
+$totalSupply: BigInt!
+$initialReserve: BigInt!
+$supplyModel: TokenSupplyModel!
+$meltValue: BigInt!
+$meltFeeRatio: Int!
+$transferable: TokenTransferable!
+$transferFeeSettings: TokenTransferFeeSettingsInput!
+$nonFungible: Boolean!
+$ethAddress: EthAddress
+$test: Boolean = true
+$send: Boolean = true

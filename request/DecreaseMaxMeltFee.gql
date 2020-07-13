@@ -1,0 +1,19 @@
+query {
+    result: DecreaseMaxMeltFee(
+        tokenId: $tokenId,
+        tokenIndex: $tokenIndex,
+        maxMeltFee: $maxMeltFee,
+        wallet: $ethAddress,
+        test: $test,
+        send: $send
+    ) {
+        ...Transaction
+    }
+}
+
+$tokenId: String!
+$tokenIndex: String
+$maxMeltFee: Int!
+$ethAddress: EthAddress
+$test: Boolean = true
+$send: Boolean = true

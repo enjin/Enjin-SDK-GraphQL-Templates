@@ -1,0 +1,23 @@
+query {
+    result: SendToken(
+        to: $recipientAddress,
+        tokenId: $tokenId,
+        tokenIndex: $tokenIndex,
+        value: $value,
+        data: $data,
+        wallet: $ethAddress,
+        test: $test,
+        send: $send
+    ) {
+        ...Transaction
+    }
+}
+
+$recipientAddress: EthAddress!
+$tokenId: String!
+$tokenIndex: String
+$value: BigInt!
+$data: String
+$ethAddress: EthAddress
+$test: Boolean = true
+$send: Boolean = true

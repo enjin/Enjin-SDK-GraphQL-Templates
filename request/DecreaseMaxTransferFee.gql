@@ -1,0 +1,19 @@
+query {
+    result: DecreaseMaxTransferFee(
+        tokenId: $tokenId,
+        tokenIndex: $tokenIndex,
+        maxTransferFee: $maxTransferFee,
+        wallet: $ethAddress,
+        test: $test,
+        send: $send
+    ) {
+        ...Transaction
+    }
+}
+
+$tokenId: String!
+$tokenIndex: String
+$maxTransferFee: BigInt!
+$ethAddress: EthAddress
+$test: Boolean = true
+$send: Boolean = true

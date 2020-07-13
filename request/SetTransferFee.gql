@@ -1,0 +1,19 @@
+query {
+    result: SetTransferFee(
+        tokenId: $tokenId,
+        tokenIndex: $tokenIndex,
+        transferFee: $transferFee,
+        wallet: $ethAddress,
+        test: $test,
+        send: $send
+    ) {
+        ...Transaction
+    }
+}
+
+$tokenId: String!
+$tokenIndex: String
+$transferFee: BigInt!
+$ethAddress: EthAddress
+$test: Boolean = true
+$send: Boolean = true

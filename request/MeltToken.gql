@@ -1,0 +1,15 @@
+query {
+    result: MeltToken(
+        melts: $melts,
+        wallet: $ethAddress,
+        test: $test,
+        send: $send
+    ) {
+        ...Transaction
+    }
+}
+
+$melts: [MeltInput]!
+$ethAddress: EthAddress
+$test: Boolean = true
+$send: Boolean = true

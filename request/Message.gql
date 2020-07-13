@@ -1,0 +1,15 @@
+query {
+    result: Message(
+        message: $message,
+        wallet: $ethAddress,
+        test: $test,
+        send: $send
+    ) {
+        ...Transaction
+    }
+}
+
+$message: String!
+$ethAddress: EthAddress
+$test: Boolean = true
+$send: Boolean = true
