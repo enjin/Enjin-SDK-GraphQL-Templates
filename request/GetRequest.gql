@@ -3,7 +3,7 @@ query {
         id: $id,
         transactionId: $transactionId
     ) {
-        ...TransactionFragment
+        ...Transaction
     }
 }
 

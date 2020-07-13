@@ -1,4 +1,4 @@
-fragment AppFragment on EnjinApp {
+fragment Project on EnjinApp {
     id
     name
     description

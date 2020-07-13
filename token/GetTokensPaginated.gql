@@ -5,10 +5,10 @@ query {
         pagination: $pagination
     ) {
         items {
-            ...TokenFragment
+            ...Token
         }
         cursor {
-            ...PaginationCursorFragment
+            ...PaginationCursor
         }
     }
 }

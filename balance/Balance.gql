@@ -1,4 +1,4 @@
-fragment BalanceFragment on EnjinBalance {
+fragment Balance on EnjinBalance {
     id(format: $balIdFormat)
     index(format: $balIndexFormat)
     value

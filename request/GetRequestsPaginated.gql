@@ -1,16 +1,18 @@
 query {
-    result: Players(
+    result: Transactions(
         filter: $filter
+        sort: $sort
         pagination: $pagination
     ) {
         items {
-            ...PlayerFragment
+            ...Transaction
         }
         cursor {
-            ...PaginationCursorFragment
+            ...PaginationCursor
         }
     }
 }
 
-$filter: PlayerFilter
+$filter: TransactionFilter
+$sort: TransactionSortInput
 $pagination: PaginationInput = { page: 1, limit: 100 }

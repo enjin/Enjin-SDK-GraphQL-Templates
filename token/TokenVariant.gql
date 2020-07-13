@@ -1,4 +1,4 @@
-fragment TokenVariantFragment on EnjinTokenVariant {
+fragment TokenVariant on EnjinTokenVariant {
     id
     tokenId
     variantMetadata @include(if: $withVariantMetadata)

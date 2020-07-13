@@ -1,4 +1,4 @@
-fragment TransactionFragment on EnjinTransaction {
+fragment Transaction on EnjinTransaction {
     id
     transactionId
     title @include(if: $withMeta)

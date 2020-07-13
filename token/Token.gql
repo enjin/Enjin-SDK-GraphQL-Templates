@@ -1,4 +1,4 @@
-fragment TokenFragment on EnjinToken {
+fragment Token on EnjinToken {
     id(format: $tokenIdFormat)
     name
     blockHeight @include(if: $withTokenBlocks)
@@ -17,11 +17,11 @@ fragment TokenFragment on EnjinToken {
     totalSupply @include(if: $withSupplyDetails)
     transferable @include(if: $withTransferSettings)
     transferFeeSettings @include(if: $withTransferSettings) {
-        ...TokenTransferFeeSettingsFragment
+        ...TokenTransferFeeSettings
     }
     variantMode @include(if: $withTokenVariantMode)
     variants @include(if: $withTokenVariants) {
-        ...TokenVariantFragment
+        ...TokenVariant
     }
     createdAt @include(if: $withTokenTimestamps)
     updatedAt @include(if: $withTokenTimestamps)

@@ -4,10 +4,10 @@ query {
         pagination: $pagination
     ) {
         items {
-            ...BalanceFragment
+            ...Balance
         }
         cursor {
-            ...PaginationCursorFragment
+            ...PaginationCursor
         }
     }
 }

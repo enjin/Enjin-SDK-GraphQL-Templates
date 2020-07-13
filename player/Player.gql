@@ -1,9 +1,9 @@
-fragment PlayerFragment on Player {
+fragment Player on Player {
     id
     linkingCode @include(if: $withLinkingCode)
     linkingCodeQr(size: $linkingCodeQrSize) @include(if: $withLinkingCodeQr)
     wallet @include(if: $withPlayerWallet) {
-        ...WalletFragment
+        ...Wallet
     }
     createdAt @include(if: $withPlayerTimestamps)
     updatedAt @include(if: $withPlayerTimestamps)

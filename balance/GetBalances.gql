@@ -2,7 +2,7 @@ query {
     result: Balances(
         filter: $filter
     ) {
-        ...BalanceFragment
+        ...Balance
     }
 }
 

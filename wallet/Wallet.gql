@@ -1,10 +1,10 @@
-fragment WalletFragment on EnjinWallet {
+fragment Wallet on EnjinWallet {
     ethAddress
     enjAllowance
     enjBalance
     ethBalance
     tokensCreated @include(if: $withTokensCreated) {
-        ...TokenFragment
+        ...Token
     }
     createdAt @include(if: $withWalletTimestamps)
     updatedAt @include(if: $withWalletTimestamps)

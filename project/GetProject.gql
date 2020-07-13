@@ -1,5 +1,5 @@
 query {
     result: App {
-        ...AppFragment
+        ...Project
     }
 }
