@@ -1,25 +1,9 @@
 query {
-    result: EnjinBalances(
-        appIds: $appIds,
-        ethAddress: $ethAddress,
-        tokenId: $tokenId,
-        filter: $filter,
-        value: $value,
-        value_gt: $valGt,
-        value_gte: $valGte,
-        value_lt: $valLt,
-        value_lte: $valLte
+    result: Balances(
+        filter: $filter
     ) {
         ...BalanceFragment
     }
 }
 
-$appIds: [Int]
-$ethAddress: String
-$tokenId: String
 $filter: BalanceFilter
-$value: Int
-$valGt: Int
-$valGte: Int
-$valLt: Int
-$valLte: Int

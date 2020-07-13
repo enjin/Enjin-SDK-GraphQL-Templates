@@ -1,0 +1,9 @@
+query {
+    result: Players(
+        filter: $filter
+    ) {
+        ...PlayerFragment
+    }
+}
+
+$filter: PlayerFilter

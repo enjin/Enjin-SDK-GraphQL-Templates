@@ -1,44 +1,40 @@
 fragment TokenFragment on EnjinToken {
     id(format: $tokenIdFormat)
-    index @include(if: $withTokenIndex)
     name
-    appId
-    nonFungible
-    creator @include(if: $withCreator)
     blockHeight @include(if: $withTokenBlocks)
+    creator @include(if: $withCreator)
     firstBlock @include(if: $withTokenBlocks)
-    icon @include(if: $withTokenIcon)
     meltFeeRatio @include(if: $withMeltDetails)
     meltFeeMaxRatio @include(if: $withMeltDetails)
     meltValue @include(if: $withMeltDetails)
-    markedForDelete @include(if: $withDeleteStatus)
-    availableToMint @include(if: $withSupplyDetails)
+    metadata @include(if: $withMetadata)
+    metadataURI @include(if: $withMetadataURI)
+    nonFungible
     reserve @include(if: $withSupplyDetails)
     supplyModel @include(if: $withSupplyDetails)
     circulatingSupply @include(if: $withSupplyDetails)
+    mintableSupply @include(if: $withSupplyDetails)
     totalSupply @include(if: $withSupplyDetails)
+    transferable @include(if: $withTransferSettings)
     transferFeeSettings @include(if: $withTransferSettings) {
         ...TokenTransferFeeSettingsFragment
     }
-    transferable @include(if: $withTransferSettings)
-    itemURI(replace_uri_parameters: $replaceUriParams) @include(if: $withItemUri)
-    metadata @include(if: $withTokenMetadata)
     variantMode @include(if: $withTokenVariantMode)
+    variants @include(if: $withTokenVariants) {
+        ...TokenVariantFragment
+    }
     createdAt @include(if: $withTokenTimestamps)
     updatedAt @include(if: $withTokenTimestamps)
 }
 
 $tokenIdFormat: TokenIdFormat
-$replaceUriParams: Boolean
-$withTokenIndex: Boolean = false
-$withCreator: Boolean = false
 $withTokenBlocks: Boolean = false
-$withTokenIcon: Boolean = false
+$withCreator: Boolean = false
 $withMeltDetails: Boolean = false
-$withDeleteStatus: Boolean = false
+$withMetadata: Boolean = false
+$withMetadataURI: Boolean = false
 $withSupplyDetails: Boolean = false
 $withTransferSettings: Boolean = false
-$withItemUri: Boolean = false
-$withTokenMetadata: Boolean = false
 $withTokenVariantMode: Boolean = false
+$withTokenVariants: Boolean = false
 $withTokenTimestamps: Boolean = false

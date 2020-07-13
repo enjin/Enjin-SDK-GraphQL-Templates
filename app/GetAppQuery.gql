@@ -1,11 +1,5 @@
 query {
-    result: EnjinApp(
-        id: $id,
-        name: $name
-    ) {
+    result: App {
         ...AppFragment
     }
 }
-
-$id: Int
-$name: String

@@ -1,41 +1,32 @@
 fragment TransactionFragment on EnjinTransaction {
     id
     transactionId
-    appId
-    identityId
-    recipientId
-    recipientAddress
-    type
-    tokenId @include(if: $withTokenData)
-    value @include(if: $withTokenData)
     title @include(if: $withMeta)
-    icon @include(if: $withMeta)
-    error @include(if: $withError)
+    contract @include(if: $withMeta)
     encodedData @include(if: $withEncodedData)
+    type
+    icon @include(if: $withMeta)
+    value @include(if: $withTokenData)
     signedTransaction @include(if: $withSignedTxs)
     signedBackupTransaction @include(if: $withSignedTxs)
     signedCancelTransaction @include(if: $withSignedTxs)
+    error @include(if: $withError)
     nonce @include(if: $withNonce)
     retryState @include(if: $withState)
     state @include(if: $withState)
     accepted @include(if: $withState)
     receipt @include(if: $withReceipt)
-    events(id: $eventsId, event: $eventsType) @include(if: $withEvents) {
-        ...TokenEventFragment
-    }
+    tokenId @include(if: $withTokenData)
     createdAt @include(if: $withRequestTimestamps)
     updatedAt @include(if: $withRequestTimestamps)
 }
 
-$eventsId: Int
-$eventsType: TokenEventType
-$withTokenData: Boolean = false
 $withMeta: Boolean = false
-$withError: Boolean = false
 $withEncodedData: Boolean = false
+$withTokenData: Boolean = false
 $withSignedTxs: Boolean = false
+$withError: Boolean = false
 $withNonce: Boolean = false
 $withState: Boolean = false
 $withReceipt: Boolean = false
-$withEvents: Boolean = false
 $withRequestTimestamps: Boolean = false

@@ -1,39 +1,11 @@
 query {
-    result: EnjinTokens(
-        id: $id,
-        appId: $appId,
-        name: $name,
-        creator: $creator,
-        totalSupply: $totalSupply,
-        reserve: $reserve,
-        supplyModel: $supplyModel,
-        meltValue: $meltValue,
-        meltFeeRatio: $meltFeeRatio,
-        nonFungible: $nonFungible,
-        transferable: $transferable,
-        firstBlock: $firstBlock,
-        blockHeight: $blockHeight,
-        markedForDelete: $markedForDelete,
+    result: Tokens(
         filter: $filter,
-        sortBy: $sort
+        sort: $sort
     ) {
         ...TokenFragment
     }
 }
 
-$id: String
-$appId: Int
-$name: String
-$creator: String
-$totalSupply: BigInt
-$reserve: String
-$supplyModel: TokenSupplyModel
-$meltValue: BigInt
-$meltFeeRatio: String
-$nonFungible: Boolean
-$transferable: TokenTransferable
-$firstBlock: Int
-$blockHeight: Int
-$markedForDelete: Boolean
 $filter: TokenFilter
 $sort: TokenSortInput

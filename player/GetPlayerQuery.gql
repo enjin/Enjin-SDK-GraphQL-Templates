@@ -1,8 +1,8 @@
 query {
-    result: Token(
+    result: Player(
         id: $id
     ) {
-        ...TokenFragment
+        ...PlayerFragment
     }
 }
 

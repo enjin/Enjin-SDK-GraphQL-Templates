@@ -1,11 +1,10 @@
 query {
-    result: EnjinApps(
-        id: $id,
-        name: $name,
+    result: Players(
+        filter: $filter
         pagination: $pagination
     ) {
         items {
-            ...AppFragment
+            ...PlayerFragment
         }
         cursor {
             ...PaginationCursorFragment
@@ -13,6 +12,5 @@ query {
     }
 }
 
-$id: Int
-$name: String
+$filter: PlayerFilter
 $pagination: PaginationInput = { page: 1, limit: 100 }

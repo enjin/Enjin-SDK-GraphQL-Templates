@@ -1,0 +1,11 @@
+query {
+    result: Transactions(
+        id: $id,
+        transactionId: $transactionId
+    ) {
+        ...TransactionFragment
+    }
+}
+
+$id: Int
+$transactionId: String

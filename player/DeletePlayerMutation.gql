@@ -1,0 +1,7 @@
+mutation {
+    result: DeletePlayer(
+        id: $id
+    )
+}
+
+$id: String

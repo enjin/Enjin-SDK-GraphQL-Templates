@@ -1,21 +1,7 @@
 query {
-    result: EnjinTokens(
-        id: $id,
-        appId: $appId,
-        name: $name,
-        creator: $creator,
-        totalSupply: $totalSupply,
-        reserve: $reserve,
-        supplyModel: $supplyModel,
-        meltValue: $meltValue,
-        meltFeeRatio: $meltFeeRatio,
-        nonFungible: $nonFungible,
-        firstBlock: $firstBlock,
-        transferable: $transferable,
-        blockHeight: $blockHeight,
-        markedForDelete: $markedForDelete,
+    result: Tokens(
         filter: $filter,
-        sortBy: $sort,
+        sort: $sort,
         pagination: $pagination
     ) {
         items {
@@ -27,20 +13,6 @@ query {
     }
 }
 
-$id: String
-$appId: Int
-$name: String
-$creator: String
-$totalSupply: BigInt
-$reserve: String
-$supplyModel: TokenSupplyModel
-$meltValue: BigInt
-$meltFeeRatio: String
-$nonFungible: Boolean
-$transferable: TokenTransferable
-$firstBlock: Int
-$blockHeight: Int
-$markedForDelete: Boolean
 $filter: TokenFilter
 $sort: TokenSortInput
 $pagination: PaginationInput = { page: 1, limit: 100 }

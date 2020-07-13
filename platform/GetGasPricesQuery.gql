@@ -1,0 +1,8 @@
+query {
+    result: GasPrice {
+        safeLow
+        average
+        fast
+        fastest
+    }
+}

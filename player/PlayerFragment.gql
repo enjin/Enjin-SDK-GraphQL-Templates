@@ -1,0 +1,16 @@
+fragment PlayerFragment on Player {
+    id
+    linkingCode @include(if: $withLinkingCode)
+    linkingCodeQr(size: $linkingCodeQrSize) @include(if: $withLinkingCodeQr)
+    wallet @include(if: $withPlayerWallet) {
+        ...WalletFragment
+    }
+    createdAt @include(if: $withPlayerTimestamps)
+    updatedAt @include(if: $withPlayerTimestamps)
+}
+
+$withLinkingCode: Boolean = false
+$withLinkingCodeQr: Boolean = false
+$withPlayerWallet: Boolean = false
+$linkingCodeQrSize: Int
+$withPlayerTimestamps: Boolean = false
