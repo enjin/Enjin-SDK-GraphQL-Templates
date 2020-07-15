@@ -17,8 +17,8 @@ fragment Transaction on EnjinTransaction {
     accepted @include(if: $withState)
     receipt @include(if: $withReceipt)
     tokenId @include(if: $withTokenData)
-    createdAt @include(if: $withRequestTimestamps)
-    updatedAt @include(if: $withRequestTimestamps)
+    createdAt
+    updatedAt
 }
 
 $withMeta: Boolean = false
@@ -29,4 +29,3 @@ $withError: Boolean = false
 $withNonce: Boolean = false
 $withState: Boolean = false
 $withReceipt: Boolean = false
-$withRequestTimestamps: Boolean = false

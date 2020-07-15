@@ -1,0 +1,8 @@
+fragment Project on EnjinApp {
+    id
+    name
+    description
+    image
+    createdAt
+    updatedAt
+}

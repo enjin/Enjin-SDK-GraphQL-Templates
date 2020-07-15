@@ -6,9 +6,8 @@ fragment Wallet on EnjinWallet {
     tokensCreated @include(if: $withTokensCreated) {
         ...Token
     }
-    createdAt @include(if: $withWalletTimestamps)
-    updatedAt @include(if: $withWalletTimestamps)
+    createdAt
+    updatedAt
 }
 
 $withTokensCreated: Boolean = false
-$withWalletTimestamps: Boolean = false

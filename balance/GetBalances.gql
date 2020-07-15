@@ -1,9 +1,0 @@
-query {
-    result: Balances(
-        filter: $filter
-    ) {
-        ...Balance
-    }
-}
-
-$filter: BalanceFilter

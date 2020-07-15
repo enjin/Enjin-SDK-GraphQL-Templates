@@ -1,5 +1,0 @@
-fragment TokenTransferFeeSettings on EnjinTokenTransferFeeSettings {
-    type
-    tokenId
-    value
-}

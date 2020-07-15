@@ -15,4 +15,4 @@ query {
 
 $filter: TransactionFilter
 $sort: TransactionSortInput
-$pagination: PaginationInput = { page: 1, limit: 100 }
+$pagination: PaginationInput

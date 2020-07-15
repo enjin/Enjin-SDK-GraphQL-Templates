@@ -1,9 +1,0 @@
-query {
-    result: Players(
-        filter: $filter
-    ) {
-        ...Player
-    }
-}
-
-$filter: PlayerFilter

@@ -1,15 +1,15 @@
-fragment Project on EnjinApp {
+fragment Player on Player {
     id
-    name
-    description
-    image
     linkingCode @include(if: $withLinkingCode)
     linkingCodeQr(size: $linkingCodeQrSize) @include(if: $withLinkingCodeQr)
-    createdAt @include(if: $withAppTimestamps)
-    updatedAt @include(if: $withAppTimestamps)
+    wallet @include(if: $withPlayerWallet) {
+        ...Wallet
+    }
+    createdAt
+    updatedAt
 }
 
 $withLinkingCode: Boolean = false
 $withLinkingCodeQr: Boolean = false
+$withPlayerWallet: Boolean = false
 $linkingCodeQrSize: Int
-$withAppTimestamps: Boolean = false

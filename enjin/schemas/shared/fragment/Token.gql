@@ -17,14 +17,21 @@ fragment Token on EnjinToken {
     totalSupply @include(if: $withSupplyDetails)
     transferable @include(if: $withTransferSettings)
     transferFeeSettings @include(if: $withTransferSettings) {
-        ...TokenTransferFeeSettings
+        type
+        tokenId
+        value
     }
     variantMode @include(if: $withTokenVariantMode)
     variants @include(if: $withTokenVariants) {
-        ...TokenVariant
+        id
+        tokenId
+        variantMetadata @include(if: $withVariantMetadata)
+        usageCount
+        createdAt
+        updatedAt
     }
-    createdAt @include(if: $withTokenTimestamps)
-    updatedAt @include(if: $withTokenTimestamps)
+    createdAt
+    updatedAt
 }
 
 $tokenIdFormat: TokenIdFormat
@@ -37,4 +44,3 @@ $withSupplyDetails: Boolean = false
 $withTransferSettings: Boolean = false
 $withTokenVariantMode: Boolean = false
 $withTokenVariants: Boolean = false
-$withTokenTimestamps: Boolean = false
