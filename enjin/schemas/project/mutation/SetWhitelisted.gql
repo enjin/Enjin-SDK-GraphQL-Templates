@@ -1,4 +1,4 @@
-query {
+mutation {
     result: SetWhitelisted(
         tokenId: $tokenId,
         account: $accountAddress,

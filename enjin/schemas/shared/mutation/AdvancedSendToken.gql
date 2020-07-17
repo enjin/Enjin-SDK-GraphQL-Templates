@@ -1,4 +1,4 @@
-query {
+mutation {
     result: AdvancedSendToken(
         transfers: $transfers,
         data: $data,

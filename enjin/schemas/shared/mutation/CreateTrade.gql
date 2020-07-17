@@ -1,4 +1,4 @@
-query {
+mutation {
     result: CreateTrade(
         askingTokens: $askingTokens,
         offeringTokens: $offeringTokens,

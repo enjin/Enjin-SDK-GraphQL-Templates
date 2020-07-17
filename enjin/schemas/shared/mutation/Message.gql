@@ -1,4 +1,4 @@
-query {
+mutation {
     result: Message(
         message: $message,
         wallet: $ethAddress,

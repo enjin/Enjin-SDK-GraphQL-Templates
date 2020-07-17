@@ -1,4 +1,4 @@
-query {
+mutation {
     result: SetTransferable(
         tokenId: $tokenId,
         tokenIndex: $tokenIndex,

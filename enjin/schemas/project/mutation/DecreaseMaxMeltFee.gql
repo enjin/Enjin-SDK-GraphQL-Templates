@@ -1,4 +1,4 @@
-query {
+mutation {
     result: DecreaseMaxMeltFee(
         tokenId: $tokenId,
         tokenIndex: $tokenIndex,

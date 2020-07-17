@@ -1,4 +1,4 @@
-query {
+mutation {
     result: ReleaseReserve(
         tokenId: $tokenId,
         value: $value,

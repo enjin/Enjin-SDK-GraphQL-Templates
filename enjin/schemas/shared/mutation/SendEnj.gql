@@ -1,4 +1,4 @@
-query {
+mutation {
     result: SendEnj(
         to: $recipientAddress,
         value: $value,

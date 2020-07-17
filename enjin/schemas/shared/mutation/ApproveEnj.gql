@@ -1,4 +1,4 @@
-query {
+mutation {
     result: ApproveEnj(
         value: $value,
         wallet: $ethAddress,

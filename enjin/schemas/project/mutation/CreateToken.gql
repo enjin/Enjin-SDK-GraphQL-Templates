@@ -1,4 +1,4 @@
-query {
+mutation {
     result: CreateToken(
         name: $name,
         totalSupply: $totalSupply,

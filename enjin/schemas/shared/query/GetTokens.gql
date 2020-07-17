@@ -1,4 +1,4 @@
-query {
+mutation {
     result: Tokens(
         filter: $filter,
         sort: $sort,

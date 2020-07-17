@@ -1,4 +1,4 @@
-query {
+mutation {
     result: SetApprovalForAll(
         operator: $operatorAddress,
         approved: $approved,

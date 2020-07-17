@@ -1,4 +1,4 @@
-query {
+mutation {
     result: SendToken(
         to: $recipientAddress,
         tokenId: $tokenId,

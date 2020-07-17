@@ -1,4 +1,4 @@
-query {
+mutation {
     result: ApproveMaxEnj(
         wallet: $ethAddress,
         test: $test,

@@ -1,4 +1,4 @@
-query {
+mutation {
     result: MintToken(
         tokenId: $tokenId,
         mints: $mints,

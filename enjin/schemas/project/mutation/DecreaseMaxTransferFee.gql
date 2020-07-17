@@ -1,4 +1,4 @@
-query {
+mutation {
     result: DecreaseMaxTransferFee(
         tokenId: $tokenId,
         tokenIndex: $tokenIndex,

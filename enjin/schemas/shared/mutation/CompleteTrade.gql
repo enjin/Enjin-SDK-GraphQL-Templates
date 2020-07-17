@@ -1,4 +1,4 @@
-query {
+mutation {
     result: CompleteTrade(
         tradeId: $tradeId,
         wallet: $ethAddress,
