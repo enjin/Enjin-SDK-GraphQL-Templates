@@ -3,3 +3,5 @@ mutation {
         address: $ethAddress
     )
 }
+
+$ethAddress: String!
