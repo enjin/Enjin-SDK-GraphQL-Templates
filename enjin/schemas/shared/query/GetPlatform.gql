@@ -19,7 +19,7 @@ query {
         notifications @include(if: $withNotificationDrivers) {
             pusher {
                 key
-                nameSpace: namespace
+                namespace
                 channels {
                     app
                     player
