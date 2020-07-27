@@ -44,3 +44,4 @@ $withSupplyDetails: Boolean = false
 $withTransferSettings: Boolean = false
 $withTokenVariantMode: Boolean = false
 $withTokenVariants: Boolean = false
+$withVariantMetadata: Boolean = false
