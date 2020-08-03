@@ -1,3 +1,13 @@
+#namespace enjin.sdk.project.SetTransferable
+#import enjin.sdk.shared.Transaction
+
+#arg tokenId String!
+#arg tokenIndex String
+#arg transferable TokenTransferable!
+#arg ethAddress EthAddress
+#arg test Boolean true
+#arg send Boolean true
+
 mutation {
     result: SetTransferable(
         tokenId: $tokenId,
@@ -10,10 +20,3 @@ mutation {
         ...Transaction
     }
 }
-
-$tokenId: String!
-$tokenIndex: String
-$transferable: TokenTransferable!
-$ethAddress: EthAddress
-$test: Boolean = true
-$send: Boolean = true

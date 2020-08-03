@@ -1,3 +1,8 @@
+#namespace enjin.sdk.shared.GetToken
+#import enjin.sdk.shared.Token
+
+#arg id String
+
 query {
     result: Token(
         id: $id
@@ -5,5 +10,3 @@ query {
         ...Token
     }
 }
-
-$id: String

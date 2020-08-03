@@ -1,3 +1,8 @@
+#namespace enjin.sdk.shared.GetPlatform
+
+#arg withContracts Boolean false
+#arg withNotificationDrivers Boolean false
+
 query {
     result: Platform {
         id
@@ -34,6 +39,3 @@ query {
         }
     }
 }
-
-$withContracts: Boolean = false
-$withNotificationDrivers: Boolean = false

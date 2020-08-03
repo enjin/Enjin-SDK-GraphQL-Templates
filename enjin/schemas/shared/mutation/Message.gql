@@ -1,3 +1,11 @@
+#namespace enjin.sdk.shared.Message
+#import enjin.sdk.shared.Transaction
+
+#arg message String!
+#arg ethAddress EthAddress
+#arg test Boolean true
+#arg send Boolean true
+
 mutation {
     result: Message(
         message: $message,
@@ -8,8 +16,3 @@ mutation {
         ...Transaction
     }
 }
-
-$message: String!
-$ethAddress: EthAddress
-$test: Boolean = true
-$send: Boolean = true

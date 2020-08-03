@@ -1,3 +1,9 @@
+#namespace enjin.sdk.shared.GetRequest
+#import enjin.sdk.shared.Transaction
+
+#arg id Int
+#arg transactionId String
+
 query {
     result: Transactions(
         id: $id,
@@ -6,6 +12,3 @@ query {
         ...Transaction
     }
 }
-
-$id: Int
-$transactionId: String

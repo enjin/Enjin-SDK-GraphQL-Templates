@@ -1,3 +1,12 @@
+#namespace enjin.sdk.shared.SetApprovalForAll
+#import enjin.sdk.shared.Transaction
+
+#arg operatorAddress EthAddress!
+#arg approved Boolean!
+#arg ethAddress EthAddress
+#arg test Boolean true
+#arg send Boolean true
+
 mutation {
     result: SetApprovalForAll(
         operator: $operatorAddress,
@@ -9,9 +18,3 @@ mutation {
         ...Transaction
     }
 }
-
-$operator: EthAddress!
-$approved: Boolean!
-$ethAddress: EthAddress
-$test: Boolean = true
-$send: Boolean = true

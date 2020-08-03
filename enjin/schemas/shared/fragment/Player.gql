@@ -1,3 +1,11 @@
+#namespace enjin.sdk.shared.Player
+#import enjin.sdk.shared.Wallet
+
+#arg withLinkingCode Boolean false
+#arg withLinkingCodeQr Boolean false
+#arg withPlayerWallet Boolean false
+#arg linkingCodeQrSize Int
+
 fragment Player on Player {
     id
     linkingCode @include(if: $withLinkingCode)
@@ -8,8 +16,3 @@ fragment Player on Player {
     createdAt
     updatedAt
 }
-
-$withLinkingCode: Boolean = false
-$withLinkingCodeQr: Boolean = false
-$withPlayerWallet: Boolean = false
-$linkingCodeQrSize: Int

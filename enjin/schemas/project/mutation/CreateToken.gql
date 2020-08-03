@@ -1,3 +1,19 @@
+#namespace enjin.sdk.project.CreateToken
+#import enjin.sdk.shared.Transaction
+
+#arg name String!
+#arg totalSupply BigInt!
+#arg initialReserve BigInt!
+#arg supplyModel TokenSupplyModel!
+#arg meltValue BigInt!
+#arg meltFeeRatio Int!
+#arg transferable TokenTransferable!
+#arg transferFeeSettings TokenTransferFeeSettingsInput!
+#arg nonFungible Boolean!
+#arg ethAddress EthAddress
+#arg test Boolean true
+#arg send Boolean true
+
 mutation {
     result: CreateToken(
         name: $name,
@@ -16,16 +32,3 @@ mutation {
         ...Transaction
     }
 }
-
-$name: String!
-$totalSupply: BigInt!
-$initialReserve: BigInt!
-$supplyModel: TokenSupplyModel!
-$meltValue: BigInt!
-$meltFeeRatio: Int!
-$transferable: TokenTransferable!
-$transferFeeSettings: TokenTransferFeeSettingsInput!
-$nonFungible: Boolean!
-$ethAddress: EthAddress
-$test: Boolean = true
-$send: Boolean = true

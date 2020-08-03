@@ -1,3 +1,7 @@
+#namespace enjin.sdk.project.CreatePlayer
+
+#arg id String
+
 mutation {
     result: CreatePlayer(
         id: $id
@@ -6,5 +10,3 @@ mutation {
         expiresIn
     }
 }
-
-$id: String

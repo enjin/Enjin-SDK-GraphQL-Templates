@@ -1,7 +1,9 @@
+#namespace enjin.sdk.project.InvalidateTokenMetadata
+
+#arg id String!
+
 mutation {
     result: InvalidateTokenMetadata(
         id: $id
     )
 }
-
-$id: String!

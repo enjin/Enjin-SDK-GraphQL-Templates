@@ -1,3 +1,8 @@
+#namespace enjin.sdk.shared.Wallet
+#import enjin.sdk.shared.Token
+
+#arg withTokensCreated Boolean false
+
 fragment Wallet on EnjinWallet {
     ethAddress
     enjAllowance
@@ -7,5 +12,3 @@ fragment Wallet on EnjinWallet {
         ...Token
     }
 }
-
-$withTokensCreated: Boolean = false
