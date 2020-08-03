@@ -1,3 +1,15 @@
+#namespace enjin.sdk.shared.SendToken
+#import enjin.sdk.shared.Transaction
+
+#arg recipientAddress EthAddress!
+#arg tokenId String!
+#arg tokenIndex String
+#arg value BigInt!
+#arg data String
+#arg ethAddress EthAddress
+#arg test Boolean true
+#arg send Boolean true
+
 mutation {
     result: SendToken(
         to: $recipientAddress,
@@ -12,12 +24,3 @@ mutation {
         ...Transaction
     }
 }
-
-$recipientAddress: EthAddress!
-$tokenId: String!
-$tokenIndex: String
-$value: BigInt!
-$data: String
-$ethAddress: EthAddress
-$test: Boolean = true
-$send: Boolean = true

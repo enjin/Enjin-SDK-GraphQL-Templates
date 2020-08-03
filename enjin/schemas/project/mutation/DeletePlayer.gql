@@ -1,7 +1,9 @@
+#namespace enjin.sdk.project.DeletePlayer
+
+#arg id String!
+
 mutation {
     result: DeletePlayer(
         id: $id
     )
 }
-
-$id: String

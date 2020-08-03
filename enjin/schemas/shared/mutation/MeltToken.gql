@@ -1,3 +1,11 @@
+#namespace enjin.sdk.shared.MeltToken
+#import enjin.sdk.shared.Transaction
+
+#arg melts [MeltInput]!
+#arg ethAddress EthAddress
+#arg test Boolean true
+#arg send Boolean true
+
 mutation {
     result: MeltToken(
         melts: $melts,
@@ -8,8 +16,3 @@ mutation {
         ...Transaction
     }
 }
-
-$melts: [MeltInput]!
-$ethAddress: EthAddress
-$test: Boolean = true
-$send: Boolean = true

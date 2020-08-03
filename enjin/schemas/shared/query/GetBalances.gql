@@ -1,3 +1,10 @@
+#namespace enjin.sdk.shared.GetBalances
+#import enjin.sdk.shared.Balance
+#import enjin.sdk.shared.PaginationInput
+
+#arg filter BalanceFilter
+#arg pagination PaginationInput {page:1,limit:100}
+
 query {
     result: Balances(
         filter: $filter,
@@ -11,6 +18,3 @@ query {
         }
     }
 }
-
-$filter: BalanceFilter
-$pagination: PaginationInput

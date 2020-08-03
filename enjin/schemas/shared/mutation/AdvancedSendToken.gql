@@ -1,3 +1,12 @@
+#namespace enjin.sdk.shared.AdvancedSendToken
+#import enjin.sdk.shared.Transaction
+
+#arg transfers [TransferInput]!
+#arg data String
+#arg ethAddress EthAddress
+#arg test Boolean true
+#arg send Boolean true
+
 mutation {
     result: AdvancedSendToken(
         transfers: $transfers,
@@ -9,9 +18,3 @@ mutation {
         ...Transaction
     }
 }
-
-$transfers: [TransferInput]!
-$data: String
-$ethAddress: EthAddress
-$test: Boolean = true
-$send: Boolean = true

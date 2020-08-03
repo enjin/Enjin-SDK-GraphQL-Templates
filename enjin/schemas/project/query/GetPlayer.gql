@@ -1,3 +1,8 @@
+#namespace enjin.sdk.project.GetPlayer
+#import enjin.sdk.shared.Player
+
+#arg id String!
+
 query {
     result: Player(
         id: $id
@@ -5,5 +10,3 @@ query {
         ...Player
     }
 }
-
-$id: String

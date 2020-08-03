@@ -1,3 +1,6 @@
+#namespace enjin.sdk.player.GetPlayer
+#import enjin.sdk.shared.Player
+
 query {
     result: Player {
         ...Player

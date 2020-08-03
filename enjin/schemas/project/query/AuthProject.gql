@@ -1,3 +1,8 @@
+#namespace enjin.sdk.project.AuthProject
+
+#arg id Int!
+#arg secret String!
+
 query {
     result: AuthApp(id: $id, secret: $secret) {
         accessToken
