@@ -6,7 +6,7 @@
 #arg sort TokenSortInput
 #arg pagination PaginationInput {page:1,limit:100}
 
-mutation {
+query {
     result: Tokens(
         filter: $filter,
         sort: $sort,
