@@ -1,6 +1,6 @@
 #namespace enjin.sdk.shared.GetRequests
-#include enjin.sdk.shared.Transaction
-#include enjin.sdk.shared.PaginationCursor
+#import enjin.sdk.shared.Transaction
+#import enjin.sdk.shared.PaginationCursor
 
 #arg filter TransactionFilter
 #arg sort TransactionSortInput
