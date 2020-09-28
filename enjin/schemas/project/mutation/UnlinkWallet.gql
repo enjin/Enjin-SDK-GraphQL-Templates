@@ -1,9 +1,0 @@
-#namespace enjin.sdk.project.UnlinkWallet
-
-#arg ethAddress String!
-
-mutation {
-    result: UnlinkWallet(
-        address: $ethAddress
-    )
-}
