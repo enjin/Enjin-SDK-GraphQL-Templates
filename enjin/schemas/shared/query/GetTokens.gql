@@ -7,7 +7,7 @@
 #arg pagination PaginationInput {page:1,limit:100}
 
 query {
-    result: Tokens(
+    result: GetTokens(
         filter: $filter,
         sort: $sort,
         pagination: $pagination

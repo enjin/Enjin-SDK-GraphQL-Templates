@@ -7,7 +7,7 @@
 #arg pagination PaginationInput {page:1,limit:100}
 
 query {
-    result: Transactions(
+    result: GetTransactions(
         filter: $filter
         sort: $sort
         pagination: $pagination
