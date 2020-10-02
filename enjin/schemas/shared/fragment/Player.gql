@@ -2,16 +2,14 @@
 #import enjin.sdk.shared.Wallet
 
 #arg withLinkingInfo Boolean false
-#arg withLinkingCode Boolean false
-#arg withLinkingCodeQr Boolean false
 #arg withPlayerWallet Boolean false
 #arg linkingCodeQrSize Int
 
 fragment Player on Player {
     id
     linkingInfo @include(if: $withLinkingInfo) {
-        linkingCode @include(if: $withLinkingCode)
-        linkingCodeQr(size: $linkingCodeQrSize) @include(if: $withLinkingCodeQr)
+        linkingCode
+        linkingCodeQr(size: $linkingCodeQrSize)
     }
     wallet @include(if: $withPlayerWallet) {
         ...Wallet
