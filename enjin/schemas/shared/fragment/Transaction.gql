@@ -9,6 +9,8 @@
 #arg withNonce Boolean false
 #arg withState Boolean false
 #arg withReceipt Boolean false
+#arg withReceiptLogs Boolean false
+#arg withLogEvent Boolean false
 
 fragment Transaction on Transaction {
     id
@@ -35,7 +37,21 @@ fragment Transaction on Transaction {
             transactionHash
             transactionIndex
             status
-            logs
+            logs @include(if: $withReceiptLogs) {
+                blockNumber
+                address
+                transactionHash
+                data
+                topics
+                event @include(if: $withLogEvent) {
+                    name
+                    inputs
+                    nonIndexedInputs
+                    indexedInputs
+                    signature
+                    encodedSignature
+                }
+            }
         }
         error @include(if: $withError)
         nonce @include(if: $withNonce)
