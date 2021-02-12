@@ -5,7 +5,6 @@
 #arg offeringAssets [TradeInput!]!
 #arg recipientAddress EthAddress!
 #arg ethAddress EthAddress
-#arg test Boolean true
 #arg send Boolean true
 
 mutation {
@@ -14,7 +13,6 @@ mutation {
         offeringAssets: $offeringAssets,
         secondParty: $recipientAddress,
         wallet: $ethAddress,
-        test: $test,
         send: $send
     ) {
         ...Transaction

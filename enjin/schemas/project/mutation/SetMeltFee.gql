@@ -5,7 +5,6 @@
 #arg assetIndex String
 #arg meltFee Int!
 #arg ethAddress EthAddress
-#arg test Boolean true
 #arg send Boolean true
 
 mutation {
@@ -14,7 +13,6 @@ mutation {
         assetIndex: $assetIndex,
         meltFee: $meltFee,
         wallet: $ethAddress,
-        test: $test,
         send: $send
     ) {
         ...Transaction

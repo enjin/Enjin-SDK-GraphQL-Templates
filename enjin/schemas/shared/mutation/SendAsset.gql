@@ -7,7 +7,6 @@
 #arg value BigInt
 #arg data String
 #arg ethAddress EthAddress
-#arg test Boolean true
 #arg send Boolean true
 
 mutation {
@@ -18,7 +17,6 @@ mutation {
         value: $value,
         data: $data,
         wallet: $ethAddress,
-        test: $test,
         send: $send
     ) {
         ...Transaction
