@@ -2,14 +2,14 @@
 
 #arg balIdFormat AssetIdFormat
 #arg balIndexFormat AssetIndexFormat
-#arg withBalAppId Boolean false
+#arg withBalProjectId Boolean false
 #arg withBalWalletAddress Boolean false
 
 fragment Balance on Balance {
     id(format: $balIdFormat)
     index(format: $balIndexFormat)
     value
-    app @include(if: $withBalAppId) {
+    project @include(if: $withBalProjectId) {
         id
     }
     wallet @include(if: $withBalWalletAddress) {
