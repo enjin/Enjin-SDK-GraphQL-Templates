@@ -56,7 +56,6 @@ fragment Transaction on Transaction {
         error @include(if: $withError)
         nonce @include(if: $withNonce)
     }
-    assetId @include(if: $withAssetData)
     createdAt
     updatedAt
 }
