@@ -1,7 +1,7 @@
 #namespace enjin.sdk.project.ReleaseReserve
 #import enjin.sdk.shared.Transaction
 
-#arg tokenId String!
+#arg assetId String!
 #arg value BigInt!
 #arg ethAddress EthAddress
 #arg test Boolean true
@@ -9,7 +9,7 @@
 
 mutation {
     result: ReleaseReserve(
-        tokenId: $tokenId,
+        assetId: $assetId,
         value: $value,
         wallet: $ethAddress,
         test: $test,

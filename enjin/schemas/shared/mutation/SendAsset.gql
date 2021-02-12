@@ -1,9 +1,9 @@
-#namespace enjin.sdk.shared.SendToken
+#namespace enjin.sdk.shared.SendAsset
 #import enjin.sdk.shared.Transaction
 
 #arg recipientAddress EthAddress!
-#arg tokenId String!
-#arg tokenIndex String
+#arg assetId String!
+#arg assetIndex String
 #arg value BigInt
 #arg data String
 #arg ethAddress EthAddress
@@ -11,10 +11,10 @@
 #arg send Boolean true
 
 mutation {
-    result: SendToken(
+    result: SendAsset(
         to: $recipientAddress,
-        tokenId: $tokenId,
-        tokenIndex: $tokenIndex,
+        assetId: $assetId,
+        assetIndex: $assetIndex,
         value: $value,
         data: $data,
         wallet: $ethAddress,

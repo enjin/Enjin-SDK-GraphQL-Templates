@@ -1,7 +1,7 @@
 #namespace enjin.sdk.shared.Balance
 
-#arg balIdFormat TokenIdFormat
-#arg balIndexFormat TokenIndexFormat
+#arg balIdFormat AssetIdFormat
+#arg balIndexFormat AssetIndexFormat
 #arg withBalAppId Boolean false
 #arg withBalWalletAddress Boolean false
 

@@ -1,7 +1,7 @@
 #namespace enjin.sdk.project.SetWhitelisted
 #import enjin.sdk.shared.Transaction
 
-#arg tokenId String!
+#arg assetId String!
 #arg accountAddress EthAddress!
 #arg whitelisted Whitelisted!
 #arg whitelistedAddress EthAddress
@@ -12,7 +12,7 @@
 
 mutation {
     result: SetWhitelisted(
-        tokenId: $tokenId,
+        assetId: $assetId,
         account: $accountAddress,
         whitelisted: $whitelisted,
         whitelistedAddress: $whitelistedAddress,
