@@ -17,12 +17,12 @@ fragment Transaction on Transaction {
     transactionId
     title @include(if: $withMeta)
     contract @include(if: $withMeta)
+    projectWallet @include(if: $withMeta)
     type
     value @include(if: $withAssetData)
     retryState @include(if: $withState)
     state @include(if: $withState)
     accepted @include(if: $withState)
-    projectWallet @include(if: $withState)
     blockchainData @include(if: $withBlockchainData) {
         encodedData @include(if: $withEncodedData)
         signedTransaction @include(if: $withSignedTxs)
