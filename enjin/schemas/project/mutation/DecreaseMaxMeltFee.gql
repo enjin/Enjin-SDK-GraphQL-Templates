@@ -2,7 +2,6 @@
 #import enjin.sdk.shared.Transaction
 
 #arg assetId String!
-#arg assetIndex String
 #arg maxMeltFee Int!
 #arg ethAddress EthAddress
 #arg send Boolean true
@@ -10,7 +9,6 @@
 mutation {
     result: DecreaseMaxMeltFee(
         assetId: $assetId,
-        assetIndex: $assetIndex,
         maxMeltFee: $maxMeltFee,
         wallet: $ethAddress,
         send: $send
