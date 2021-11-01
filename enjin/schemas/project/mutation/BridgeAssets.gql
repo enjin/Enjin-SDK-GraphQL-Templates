@@ -2,13 +2,13 @@
 #import enjin.sdk.shared.Transaction
 
 #arg assetId String!
-#arg assetIndex [String!]!
+#arg assetIndices [String!]!
 #arg ethAddress EthAddress
 
 mutation {
     result: BridgeAssets(
         assetId: $assetId
-        assetIndex: $assetIndex
+        assetIndices: $assetIndices
         wallet: $ethAddress
     ) {
         ...Transaction

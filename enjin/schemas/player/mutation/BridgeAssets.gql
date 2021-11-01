@@ -2,12 +2,12 @@
 #import enjin.sdk.shared.Transaction
 
 #arg assetId String!
-#arg assetIndex [String!]!
+#arg assetIndices [String!]!
 
 mutation {
     result: BridgeAssets(
         assetId: $assetId
-        assetIndex: $assetIndex
+        assetIndices: $assetIndices
     ) {
         ...Transaction
     }
