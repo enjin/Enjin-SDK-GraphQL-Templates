@@ -1,13 +1,13 @@
 #namespace enjin.sdk.project.BridgeClaimAsset
 #import enjin.sdk.shared.Transaction
 
-#arg address EthAddress!
 #arg assetId String
+#arg wallet EthAddress
 
 mutation {
     result: BridgeClaimAsset(
-        address: $address
         assetId: $assetId
+        wallet: $wallet
     ) {
         ...Transaction
     }
